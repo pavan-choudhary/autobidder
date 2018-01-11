@@ -1,0 +1,15 @@
+
+<div class="sidebar-container">
+  <ul class="sidebar-navigation font1">
+    <li class="header">Welcome!</li>
+    <br><br>
+    <li ng-repeat="item in menu">
+      <a href="{{item.href}}">
+        <i class="fa fa-{{item.icon}}" style="color:white;"></i>
+         &nbsp;{{item.name}}
+      </a>
+      <hr style="margin:0;border:1px dotted #535354;">
+    </li>
+  </ul>
+</div>
+

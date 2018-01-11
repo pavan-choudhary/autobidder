@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularApp">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>AUTOBIDDER</title>
+    <link rel="icon" type="image/png" href="public/ico/favicon.ico"/>
+    <link href="build/styles/style.css" rel="stylesheet">
+    <link href="build/styles/main-css.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Coda' rel='stylesheet'>
+</head>
+<body ng-controller="mainController">
+
+<div ng-if="show">
+	<topbar></topbar>
+	<sidebar class="col-md-2"> </sidebar>
+</div>
+<ui-view class="col-md-8"></ui-view>
+
+<script src="build/scripts/script.min.js"></script>
+<script src="build/scripts/main.min.js"></script>
+<script href="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div ng-controller="dashboardCtrl" class="container font1">
+	<div class="col-md-4 stats container">
+		<span>{{info.visits}} &nbsp;Visits</span>
+		<span class="fa fa-user-circle-o"></span>
+	</div>
+	<div class="col-md-4 stats">
+		<div class="col-md-8">
+			<span> Inventory</span><br>
+			<i>{{info.inventory.Total}}&nbsp;{{info.inventory.vehicle}}</i>
+		</div>
+		<div class="col-md-4"><span class="fa fa-cubes"></span></div>
+	</div>
+	<div class="col-md-4 stats container">
+		<span>{{info.purchase}} &nbsp;Purchases</span>
+		<span class="fa fa-handshake-o"></span>
+	</div>
+</div>
+
+<style type="text/css">
+	.stats{background:#f2f2f2; padding:15px 10px 10px 10px;box-shadow:1px 1px 3px grey; text-align:center;margin-right:40px;margin-bottom:20px;}
+	.stats span{ font-size:28px; }
+	.stats .fa {font-size: 70px;padding-left:1em;float:right;}
+</style>
