@@ -1,7 +1,6 @@
-
 <div class="sidebar-container">
   <ul class="sidebar-navigation font1">
-    <li class="header">Welcome!</li>
+    <li class="header">Welcome! {{username}}</li>
     <br><br>
     <li ng-repeat="item in menu">
       <a href="{{item.href}}">
@@ -11,5 +10,10 @@
       <hr style="margin:0;border:1px dotted #535354;">
     </li>
   </ul>
+
+  <img src="public/ico/equipshare.png" id="equip-logo">
 </div>
 
+<style type="text/css">
+  #equip-logo{width:55px;position:fixed;bottom:14px;left:20px; }
+</style>

@@ -1,23 +1,55 @@
 <div ng-controller="dashboardCtrl" class="container font1">
-	<div class="col-md-4 stats container">
-		<span>{{info.visits}} &nbsp;Visits</span>
-		<span class="fa fa-user-circle-o"></span>
-	</div>
-	<div class="col-md-4 stats">
-		<div class="col-md-8">
-			<span> Inventory</span><br>
-			<i>{{info.inventory.Total}}&nbsp;{{info.inventory.vehicle}}</i>
+<div class="row">
+	<div class="col-md-8" style="margin:0;padding:0;">
+		<div class="col-md-5 stats container">
+			<span>{{info.visits}} &nbsp;Visits</span>
+			<span class="fa fa-user-circle-o"></span>
 		</div>
-		<div class="col-md-4"><span class="fa fa-cubes"></span></div>
+		
+		<div class="col-md-5 stats">
+			<div class="col-md-8">
+				<span> Inventory</span><br>
+				<i>{{info.inventory.Total}}&nbsp;{{info.inventory.vehicle}}</i>
+			</div>
+			<div class="col-md-4"><span class="fa fa-cubes"></span></div>
+		</div>
+	
+		
+		<div class="col-md-5 stats container">
+			<span>{{info.purchase}} &nbsp;Users</span>
+			<span class="fa fa-handshake-o"></span>
+		</div>
+
+		<div class="col-md-5 stats container" id="deal">
+			<span>4 : Hot Deals <i class="fa fa-fire"></i> </span><br>
+			<span>3 : Lead <i class="fa fa-level-up"></i></span>
+		</div>
+
+	<!--chart-->
+		<div ng-controller="chartCtrl">
+			<div class="col-md-5 graph-card">
+				<canvas id="pie" class="chart chart-doughnut" chart-data="owner_data" chart-labels="owner_lab" chart-options="owner_options" height="230" >
+				</canvas>
+			</div>
+
+			<div class="col-md-5 graph-card">
+				<canvas id="bar" class="chart chart-bar"
+				  chart-data="views_data" chart-labels="owner_lab" chart-options="views_options" chart-series="views_series" height="230">
+				</canvas>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-4 stats container">
-		<span>{{info.purchase}} &nbsp;Purchases</span>
-		<span class="fa fa-handshake-o"></span>
+
+	<div id="feed" class="col-md-3 card">
+		<div class="label-primary" id="feed-head">
+			<center><h4>FEED <i class="fa fa-newspaper-o"></i></h4></center>
+		</div>
+		<div class="container-fluid">
+			<p>Feed Goes here</p>
+		</div>
 	</div>
 </div>
+<!--container-->
+</div>
 
-<style type="text/css">
-	.stats{background:#f2f2f2; padding:15px 10px 10px 10px;box-shadow:1px 1px 3px grey; text-align:center;margin-right:40px;margin-bottom:20px;}
-	.stats span{ font-size:28px; }
-	.stats .fa {font-size: 70px;padding-left:1em;float:right;}
-</style>
+<link rel="stylesheet" type="text/css" href="build/styles/dashboard.css">

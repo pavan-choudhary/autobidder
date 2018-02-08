@@ -1,0 +1,15 @@
+@import 'style';
+
+.card{width:98%}
+table{margin:0px;margin-bottom:20px;}
+table tr td{padding:5px 5px;}
+#basic-label{padding:5px;color:#fff; text-align: center;}
+.add-form{margin-bottom:40px;margin-left:40px; width:90%;}
+.add-form tr td label{font-weight:normal;}
+.add-form tr td{width:27%;padding-right:20px;}
+.add-form tr td input{width:90%;border:none;border-bottom:1px solid grey;border-radius:0;background:rgba(244, 246, 249,0.6); }
+.input-group{width:90%}
+input[type='file']{margin:5px;}
+.add-form tr td input[type='checkbox']{width:30px; outline:none;margin-right:20px; }
+.line{width:300px; }
+.btn-primary{padding-left:50px;padding-right :50px;}

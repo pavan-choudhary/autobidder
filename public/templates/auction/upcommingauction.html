@@ -1,0 +1,28 @@
+<div ng-controller="upauctionCtrl">
+	<h3>
+		<div class="line" id="head">UPCOMMING AUCTIONS </div>
+	</h3>
+	<div class="row" id="auction">
+		<div class="col-md-3 card" ng-repeat='eq in upeq'>
+			<div class="a-head"> Auction {{eq.id}} </div>
+			<img src="build/sample/Ford-mustang.jpg" class="img-thumbnail" ng-click="carprofile(eq.id)"><hr>
+			<div class="a-body">
+				<label class='lb'>Equipment:</label><label>{{eq.eq}} </label><br>
+				<label class='lb'>Base Bid:</label> <label><i class="fa fa-inr"></i>{{eq.base_bid}} </label><br>
+				<label class='lb'>Date:<i class="fa fa-calendar"></i></label> <label class="date">{{eq.date}} </label><br>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<style>
+	#auction .col-md-3{margin:auto; width:20%;padding:0;margin:13px;}
+	.a-body{padding-left:3px;padding-bottom:10px; }
+	.a-head{ text-align:center;font-size:16px;background:#0057a3;color:#fff; }
+	.a-body label{padding-left:10px;}
+	.a-body img{width:100%; }
+	.lb{min-width:70px;font-weight:normal;}
+	.date{color:red;}
+	hr{margin:5px;}
+</style>

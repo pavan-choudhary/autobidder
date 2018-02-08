@@ -1,0 +1,31 @@
+@import 'style';
+
+.stats{background:$card-color;
+		height:75px; 
+		padding:10px 10px 10px 10px;
+		box-shadow:1px 1px 3px grey;
+		text-align:center;
+		border-radius:5px;
+		margin :0 auto; 
+		margin-right:$right-mar;		
+		margin-bottom:10px;
+		}
+
+.stats span{ font-size:28px; }
+.stats .fa {font-size: 54px;padding-left:1em;float:right;}
+#deal{text-align:justify;padding-left:90px;}
+#deal span{font-size:18px;}
+#deal .fa{font-size:22px;padding:0;float:none;}
+.graph-card{
+	 margin-right:$right-mar;
+	 margin-top:20px;
+	 height:260px;
+	 box-shadow:2px 2px 4px grey;	
+	 border-radius:5px;
+	 padding:0; }
+
+.chart{background:linear-gradient(to bottom,white,rgba(12, 124, 179,0.7));color:white; }
+
+.col-md-5{width:44%;}
+#feed{min-height:360px;background:$white; float:left;}
+#feed h4{color:$white;margin-top:0;padding:5px;}

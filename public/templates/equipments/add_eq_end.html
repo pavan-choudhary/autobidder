@@ -1,0 +1,21 @@
+	<form ng-submit="checkouteq()">
+		<table class='add-form'>
+			<thead><br><br><h3><label class="line">Please Choose Appropriate Option</label></h3></thead>
+				<tr>
+					<td><br>
+						<label>Select the options you want to put your Equipment in !</label>
+					</td>
+				</tr>
+				<tr>
+				<td>
+					Offline<input type="checkbox" ng-model='choice.option.offline' name="option">
+					Buy it now<input type="checkbox" ng-model='choice.option.buynow' name="option">
+					Dealer to Dealer<input type="checkbox" ng-model='choice.option.d2d' name="option">
+					Auction<input type="checkbox" ng-model='choice.option.auction' name="option">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><button class="btn btn-primary">SUBMIT</button></td>
+			</tr>
+		</table>
+	</form>

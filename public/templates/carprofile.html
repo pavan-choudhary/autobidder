@@ -1,0 +1,146 @@
+<div ng-controller="carCtrl">
+	<div class="card">
+		<label class="mainlabel label-primary">Car Profile</label>
+		<br>
+		<div class="row" id="car-container">
+			<div class="col-md-3">
+				<label><h3> {{car.model}} </h3></label>
+				<button class="main-img" ng-click='showCar(car.image)' data-toggle="modal" data-target="#showCar">
+						<img ng-src='{{car.image}}' class="img-thumbnail carimage">
+				</button>
+			</div>
+			<div class="col-md-9" id='details'>
+				<div class="small-label">
+					<label><i class="fa fa-caret-right"></i> Brand : </label><span> {{car.brand}}</span>
+				</div>
+				<div class="label-container">
+					<label><i class="fa fa-caret-right"></i> Model : </label><span> {{car.model}} </span>
+				</div>
+				<div class="label-container">
+					<label><i class="fa fa-caret-right"></i> Variant : </label><span> {{car.variant}} </span>
+				</div>
+			</div>
+
+			<div class="col-md-9"><br>
+				<div class="small-label">
+					<label><i class="fa fa-calendar-o"></i> Year : </label><span> {{car.year}}</span>
+				</div>
+				<div class="label-container">
+					<label><i class="fa fa-tachometer"></i> Usage : </label><span> {{car.km}}</span>
+				</div>
+				<div class="label-container">
+					<label><i class="fa fa-caret-right"></i> Location : </label><span> {{car.city}} </span>
+				</div>
+			</div>
+
+			<div class="col-md-9"><br><br>
+				<div class="label-container">
+					<label><i class="fa fa-user"></i> Dealer : </label><span> {{car.dealer}} </span>
+				</div>
+				<div class="label-container">
+					<label><i class="fa fa-user-md"></i> Owner : </label><span> {{car.owner}} </span>
+				</div>
+			</div>
+			
+			<div class="col-md-9"><br>
+				<div class="label-container">
+					<label><i class="fa fa-caret-right"></i> Cost Price : </label><span><i class="fa fa-inr"></i> {{car.bought_price}}</span>
+				</div>
+				<div class="label-container">
+					<label><i class="fa fa-caret-right"></i> Expectations : </label><span><i class="fa fa-inr"></i>  {{car.expectations}} </span>
+				</div>
+			</div>
+			<div class="col-md-5" id="like">
+				<button ng-click="like()">
+					<i class="fa fa-thumbs-up"></i>
+				</button>
+				<span>{{car.likes}} likes</span>
+			</div>
+
+			<div class="col-md-12" style="margin-top: 30px">
+				<div>
+					<p>More Images..</p>
+					<button class="transp" ng-click='showCar(car.image)' data-toggle="modal" data-target="#showCar">
+						<img ng-src='{{car.image}}' class="moreimage img-thumbnail">
+					</button>
+					<button class="transp" ng-click='showCar(car.image)' data-toggle="modal" data-target="#showCar">
+						<img ng-src='{{car.image}}' class="moreimage img-thumbnail">
+					</button>
+					<button class="transp" ng-click='showCar(car.image)' data-toggle="modal" data-target="#showCar">
+						<img ng-src='{{car.image}}' class="moreimage img-thumbnail">
+					</button>
+					<button class="transp" ng-click='showCar(car.image2)' data-toggle="modal" data-target="#showCar">
+						<img ng-src='{{car.image2}}' class="moreimage img-thumbnail">
+					</button>
+					<button class="transp" ng-click='showCar(car.image2)' data-toggle="modal" data-target="#showCar">
+						<img ng-src='{{car.image2}}' class="moreimage img-thumbnail">
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+<!-- Modal -->
+<div id="showCar" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" data-dismiss="modal">X</button>
+        <h4 class="modal-title">{{car.model}} </h4>
+      </div>
+      <div class="modal-body">
+        <img ng-src="{{modalimg}}">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--modal ends-->
+</div>
+
+<style type="text/css">
+body{background: #eef1f6;}
+	.card{ padding: 10px; }
+	.carimage{}
+	#car-container{border:2px dotted grey;margin:10px;padding-bottom:30px;width:96% }
+	#car-container h3{padding-left:30px;}
+	#details{padding-top:50px;}
+	.label-container,.small-label{background:#f7faff; display:inline-block; border-bottom:1px solid #e2e2e2;border-left:1px solid #e2e2e2;}
+	.label-container label,.small-label label{padding-right:10px;padding-left:5px; }
+	.label-container{width:31%;}
+	.small-label{width:22%;}
+	.label-container span,.small-label span{color:navy;}
+	.moreimage{}
+	.transp{width:22%;margin-left:1% ;background:transparent;border:none;border-radius:0;outline:none;}
+	#floatr{float:right;}
+	#like{font-size:22px;margin:20px 10px 10px 10px;}
+	#like button{border:none;background:transparent; }
+	#like span{font-size:15px; }
+	#like i{color:grey;}
+	.zoom{
+		animation:enlarge 1s;  
+	}
+	@keyframes enlarge{
+		0%{ transform:scale(0);}
+		50%{ transform:scale(1.5); }
+		100%{ transform:scale(0); }
+	}
+	.main-img{background:transparent;border:none;border-radius:0;outline:none;}
+	.modal-body img{width:auto;}
+	.modal-dialog{
+    position: relative;
+    display: table; /* This is important */ 
+    overflow-y: auto;    
+    overflow-x: auto;
+    width: auto;
+    min-width: 300px;   
+	}
+	.close{ border:2px solid red;color:red; }
+	.modal-header button{background:transparent;border:1px solid red; float:right;color:red;font-weight:bolder;}
+</style>

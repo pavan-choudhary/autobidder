@@ -1,0 +1,68 @@
+<div class="col-md-12" ng-controller='signupCtrl'>
+<div id="form" class="font1">
+	<h3>Welcome to AUTOBIDDER</h3>
+	<h4><i class="fa fa-sign-up"></i>&nbsp;SIGN-UP</h4> <br>
+	<form ng-submit="signup()">
+		<center>
+			<table>
+			<tr>
+				<td>
+					<label>Username:</label>
+					<input type="text" class="form-control" ng-model="sign.username" ng-required="true">
+				</td>
+				<td>
+					<label>Password:</label>
+					<input type="password" class="form-control" ng-model="sign.password" ng-required="true">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Email:</label>
+					<input type="email" class="form-control" ng-model="sign.email" ng-required="true">
+				</td>
+				<td>
+					<label>Mobile :</label>
+					<input type="number" class="form-control" ng-model="sign.mobile" ng-required="true">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Address:</label>
+					<input type="text" class="form-control" ng-model="sign.address" ng-required="true">
+				</td>
+				<td>
+					<label>Type :</label>
+					<select ng-model='sign.category' class="form-control">
+						<option value="1">User</option>
+			  			<option value="2">Dealer/Trader</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button class="btn btn-primary"><i class="fa fa-sign-up"></i>&nbsp;Signup</button>
+				</td>
+				<td>
+					Already have account? <a class="btn btn-sm" href='/login'>Login</a>
+				</td>
+			</tr>
+			</table>
+		</center>	
+	</form>
+</div>
+</div>
+
+<style type="text/css">
+	body{background-image:url("public/images/login-back.jpg");}
+	#view{margin:0;background:transparent;}
+	#form{background:url("public/images/form-back.jpg");padding:30px 20px 50px 20px;margin-top:2%;margin-left:24%;color:white;
+		 width:60%; border-radius:5px;text-align: center;}
+	input[type=number]::-webkit-outer-spin-button,
+	input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none;margin: 0;}
+	input[type=number] { -moz-appearance:textfield; }
+	table tr td{padding:10px;}
+	label{padding-left:10px;}
+	input{width:230px;}
+	.btn{padding:4px 30px 4px 30px; background:#0c7cb3;border-radius:2px;font-weight:bold;}
+	#signup a ,.btn-sm {color: white;}
+</style>

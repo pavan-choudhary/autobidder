@@ -1,4 +1,46 @@
+$card-color: #fff;
+$blue : #0c7cb3;
+$dark :#2f323e;
+$grey:#cccccc;
+$light:#eef1f6;
+$white:#fff;
+$label:navy;
+$right-mar:40px;
+
+@import url('https://fonts.googleapis.com/css?family=Abel');
+html{}
+body{
+  background-color:#f4f6f9;overflow-x:hidden;font-family:'Coda';
+	}
 .navbar a{
   padding: 5px;
 }
-.font1{font-family:'Coda';}
+label{font-family:Abel;font-size:16px;  }
+.card{box-shadow:2px 2px 4px grey;	
+	 border-radius:5px;
+	 padding:0;
+	 background-color:$white;}
+
+#path{ padding:5px; width:370px;
+	margin-bottom:6px;
+	background-color:#fff; 
+	font-size:18px;
+  border-bottom:1px solid grey;}
+#view{font-family:'Coda';margin-top:5em;padding-left:30px;background:#f4f6f9;}
+ui-view{ }
+.line{
+    display: table;
+    white-space: nowrap;
+    &:before, &:after {
+      border-top: 1px solid navy;
+      content: '';
+      display: table-cell;
+      position: relative;
+      top: 0.5em;
+      width: 400px;
+    }
+    &:before { right: 1.5%; }
+    &:after { left: 1.5%; }
+}
+.mainlabel{padding:5px;color:#fff;width:200px;padding-left:40px;box-shadow:4px 4px 4px grey; }
+.form-control:focus {border-color:grey;box-shadow:1px 1px 3px grey }

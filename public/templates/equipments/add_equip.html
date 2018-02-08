@@ -1,0 +1,114 @@
+<div ng-controller="add_equipCtrl">
+<center>
+	<form class="card" style="padding-bottom: 40px;margin-bottom:40px;" ng-submit='add_equipment()'>
+		<center>
+		<h4 class="label-info" id='basic-label'>Basic Details</h4> 	
+			<table class='add-form'>
+				<tr>
+					<td>
+						<label>Brand :</label>
+						<input type="text" class="form-control" ng-model='basic.brand' required>
+					</td>
+					<td>
+						<label>Model :</label>
+						<input type="text" class="form-control" ng-model='basic.model' required>
+					</td>
+					<td>
+						<label>Variant :</label>
+						<input type="text" class="form-control" ng-model='basic.variant' required>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label>Year of make:</label>
+						<input type="number" class="form-control" max="2019" min="1970" ng-model='basic.year' required>
+					</td>
+					
+					<td>
+						<label>Usage :</label>
+						<input type="number" class="form-control" ng-model='basic.usage' placeholder="km(car/truck) ,Hours(Equipment)" required>
+					</td>
+					<td>
+						<label>Location :</label>
+						<input type="text" class="form-control" ng-model='basic.city' required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Bought Price :</label>
+						<div class="input-group">
+						    <span class="input-group-addon"><i class="fa fa-inr"></i></span>
+						    <input type="number" class="form-control" ng-model='basic.bought_price'>
+						</div>
+					</td>
+					<td>
+						<label>Expetations :</label>
+						<div class="input-group">
+						    <span class="input-group-addon"><i class="fa fa-inr"></i></span>
+						    <input type="number" class="form-control" ng-model='basic.expectations'>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Owner Info :</label>
+						<input type="text" class="form-control" ng-model='basic.owner_info' required>
+					</td>
+				</tr>
+			</table>
+		<br>
+		<table class='add-form'>
+			<thead><label class="line">Condition of Equipment</label></thead>
+			<tr>
+				<td>
+					<label>Exterior Condition :</label><br>
+					Dent<input type="checkbox" ng-model='basic.dent' value="Dent">
+					Scratch<input type="checkbox" ng-model='basic.scratch' value="Scratch">
+				</td>
+				<td>
+					<label>Accident/Not :</label>
+					<input type="text" class="form-control" ng-model='basic.accident' required>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3"><br><br>
+					<center><label>--------Upload Photos---------</label></center>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding-top:0;">
+					<label>Equipment :</label><br>
+					<input type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-height="1000" ngf-max-size="2MB" required>
+					<input type="file" ng-model='basic.equip.b'>	
+					<input type="file" ng-model='basic.equip.c'>
+				</td>
+				
+				<td>
+					<label>Meter Photos :</label><br>
+					<input type="file" ng-model='basic.equip.meter1'>
+					<input type="file" ng-model='basic.equip.meter2'>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Documents :</label><br>
+					<input type="file" ng-model='basic.equip.doc1' >
+					<input type="file" ng-model='basic.equip.doc2' >
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button class="btn btn-primary pull-right">ADD Equipment!</button></td>
+			</tr>
+		</table>
+		</center>
+	</form>
+	<div>
+
+	</div>
+</center>
+</div>
+
+<link rel="stylesheet" type="text/css" href="build/styles/add_equip.css">

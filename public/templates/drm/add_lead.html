@@ -1,0 +1,59 @@
+<div ng-controller='addleadCtrl'>
+	<div class="card row">
+		<label id="lead-label" class="label-primary mainlabel">New Lead Entry.</label>
+		<br><br>	
+		<form>
+			<table class='add-form'>
+				<tr>
+					<td>
+						<label>Customer Name :</label>
+						<input type="text" class="form-control" ng-model='newl.name' required>
+					</td>
+					<td>
+						<label>Type :</label>
+						<select ng-model='newl.type' class="form-control" required>
+							<option value="Buy">Buy</option>
+							<option value="Sell">Sell</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label>Lead Equipment:</label>
+						<select ng-model='newl.equip' class="form-control" required>
+						</select>
+					</td>
+					<td>
+						<label>Contact :</label>
+						<input type="number" class="form-control" ng-model='newl.contact' required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Next Time Contact?</label>
+						<input type="text" class="form-control" ng-model='newl.nextcontact' required>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" class="btn btn-primary" value="ADD LEAD" style="width:180px;">
+					</td>
+				</tr>
+			</table>
+	</form>
+	</div>
+</div>
+
+<style type="text/css">
+body{background-color:#eef1f6;}
+.card{padding:20px 30px 50px 30px;margin-bottom:50px;  width:90%}
+table{margin-left:40px;margin-bottom:20px;}
+table tr td{padding:10px 5px;}
+.add-form{margin-bottom:40px;width:90%;}
+.add-form tr td label{width: 150px;}
+.add-form tr td select ,.add-form tr td input{width:100%;}
+table tr td{padding-right:50px; } 
+.line{width:300px; }
+</style>

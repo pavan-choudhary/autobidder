@@ -1,0 +1,39 @@
+<div ng-controller='drmCtrl'>
+	<div class="card">
+		<label id="lead-label" class="label-primary">Lead Enquiries</label>
+		<a href="/Add_Lead" class="btn btn-danger" id="add-lead"><i class="fa fa-plus"></i>&nbsp;ADD Lead </a>
+	<center>
+	<div class="row" style="padding-left:60px">
+		<div class="leadcard col-md-3" ng-repeat='x in leads | orderBy:"ltype"'>
+			<label class='name'>{{x.name}}</label>
+			<hr style="margin-top:0;">
+			<label>Equipment: {{x.eqname}}</label>
+			<div>
+				<span class="ltype">{{x.ltype}} </span>
+				<span style="">{{x.contact}} </span>
+			</div>
+			<div>
+				<p style="margin-top:15px;">Next contact:  {{x.next}} </p>
+			</div>
+		</div>	
+	</div>
+
+		<hr>
+		<a href="#" class="btn btn-danger" id="btn-long">Equipment Match</a>
+		<hr>
+	</center>
+	</div>
+</div>
+	
+<style type="text/css">
+body{background-color:#eef1f6;}
+.card{padding-bottom: 50px;margin-bottom:50px;}
+#lead-label{ padding:5px;color:#fff;width:200px;padding-left:40px;box-shadow:4px 4px 4px grey; }
+#add-lead{position:relative;left:53%;margin:20px 10px 20px 10px;  }
+.leadcard{box-shadow:2px 2px 4px grey;display:inline-block;padding:10px;margin:10px 0px 10px 30px;background:#eef1f6; }
+.leadcard label{display:block;}
+.leadcard .name{color:navy;}
+.ltype{margin-right:20px;color:navy;}
+.leadcard hr{border:1px solid #dcdee2;}
+#btn-long{width:230px; }
+</style>
