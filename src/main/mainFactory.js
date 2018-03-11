@@ -13,6 +13,12 @@ angular.module('angularApp')
 	    },
 	    getUser :function(){
 	    	return user;
+	    },
+	    setId : function(id){
+	        localStorage.setItem("id",id);
+	    },
+	    getId : function(){
+	        return localStorage.getItem('id');
 	    }	
 	  }
 	});

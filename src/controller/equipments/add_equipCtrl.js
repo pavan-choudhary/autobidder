@@ -8,14 +8,11 @@ angular.module('angularApp')
     ];
 
     $scope.add_equipment=function(){
-        $http.get("public/templates/equipments/add_eq_end.html")
-        .then(function(data) {
-            $('#form').html(data.data);
-        });
+        $scope.next='public/templates/equipments/add_eq_end.html';
+        $('#basic-form').hide(); 
     };
     $scope.checkouteq=function(){
-        console.log("$scope.basic");
-        console.log($scope.choice);
+        console.log(angular.toJson($scope.basic));
     };
     
  }]);

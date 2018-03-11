@@ -42,7 +42,7 @@
             })        
             .state('Dealer_Equipments', {
                 url         : '/Dealer_Equipments',
-                templateUrl : 'public/templates/equipments/dealer_equipments.html',
+                templateUrl : 'public/templates/equipments/equipments.html',
                 resolve: {
                         loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
                           // you can lazy load files for an existing module
@@ -50,7 +50,7 @@
                         }]
                       }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
             })
-            .state('add_equip', {
+            .state('Add_Equipment', {
                 url         : '/Add_Equipment',
                 templateUrl : 'public/templates/equipments/add_equip.html',
                 resolve: {  loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
