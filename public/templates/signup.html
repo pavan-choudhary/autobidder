@@ -8,7 +8,7 @@
 			<tr>
 				<td>
 					<label>Username:</label>
-					<input type="text" class="form-control" ng-model="sign.username" ng-required="true">
+					<input type="text" class="form-control" ng-model="sign.first_name" ng-required="true">
 				</td>
 				<td>
 					<label>Password:</label>
@@ -31,12 +31,35 @@
 					<input type="text" class="form-control" ng-model="sign.address" ng-required="true">
 				</td>
 				<td>
-					<label>Type :</label>
+					<label>City:</label>
+					<input type="text" class="form-control" ng-model="sign.city" ng-required="true">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>State:</label>
+					<input type="text" class="form-control" ng-model="sign.state" ng-required="true">
+				</td>
+				<td>
+					<label>Country:</label>
+					<input type="text" class="form-control" ng-model="sign.country" ng-required="true">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Zip Code:</label>
+					<input type="text" class="form-control" ng-model="sign.zipcode" ng-required="true">
+				</td>
+				<td>
+					<label>Category :</label>
 					<select ng-model='sign.category' class="form-control">
 						<option value="1">User</option>
 			  			<option value="2">Dealer/Trader</option>
 					</select>
 				</td>
+			</tr>
+
+			<tr>
 			</tr>
 			<tr>
 				<td>

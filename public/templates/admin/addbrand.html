@@ -1,0 +1,34 @@
+<div ng-controller="addbrandCtrl">
+	<div class="container">
+		<br><br>
+		<form>
+		<div class="row">
+			<div class="col-md-4">
+				<label>Brand:</label>
+				<input type="text" class="in form-control change" placeholder="Enter Brand" ng-model="eq.brand" required>
+			</div>
+			<div class="col-md-4">
+				<label>Model:</label>
+				<input type="text" class="in form-control change" placeholder="Enter Model" ng-model="eq.model">
+			</div>
+			<div class="col-md-6">
+				<br>
+				<div class="alert alert-success" ng-if="success==true">Brand- {{brand}} , Model- {{model}} added Successfully! </div>
+				<input type="submit" value="ADD" class="btn btn-primary" ng-click="addetail()">
+			</div>
+		</div>
+		</form>
+
+		<div style="height:40px"></div>
+		<h3>ALL</h3>
+		<ol>
+			<li ng-repeat="item in allbrand.slice().reverse()">
+				{{item}}
+			</li>
+		<ol>
+	</div>
+</div>
+
+<style type="text/css">
+	.in{width:300px;}
+</style>

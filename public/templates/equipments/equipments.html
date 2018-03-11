@@ -1,12 +1,15 @@
 <link href="build/styles/dealer_equipments.css" rel="stylesheet">
-<div ng-controller="dealer_equipmentsCtrl">
-
-<a class="btn btn-default" id="add" href="Add_Equipment"> <i class="fa fa-plus"></i>&nbsp;ADD Equipment</a>
-<br><br>
+<div ng-controller="equipmentsCtrl">
+	<a class="btn btn-primary" id="add" ui-sref="Add_Equipment"> <i class="fa fa-plus"></i>
+		&nbsp;ADD Equipment
+	</a>
+	<div ng-bind-html="eqbtns" class="pull-left"></div>
+<br>
+<center><h3 id="head" class="alert-info">{{head}}</h3></center>
 
 <div class="row">
-	<a href="/carprofile/1" class="link">
 	 <div class="col-md-3 card eq-card" ng-repeat="item in my_equip">
+		<a ui-sref="carprofile({id:1})" class="link">
 		<div><img src="{{item.image}}" class="img-thumbnail eq-image"></div>
 		<div class="eq-desc">
 			<center>
@@ -34,20 +37,39 @@
 							<i class="fa fa-inr"></i>{{item.bought_price}}
 						</td>
 					</tr>
+					<tr>
+						<td colspan="2">
+							<hr class="hr">
+							<span ng-repeat="(opt,val) in item.option" class="category" ng-if="val==true">&bull; {{opt}}</span>
+						</td>
+					</tr>
 				</table>
 			</center>
 		</div>
+		</a>
 	 </div>
-	</a>
 </div>
 
 <style type="text/css">
+body{background-color:#f4f6f9;}
 	.row{margin-left:40px;margin-right:10px}
 	.link{color:black;}
-	.link :hover{color:black;}
+	a:hover{color:black;text-decoration:none;}
 	.col-md-3{width:21%;display:block; }
 	.fa-thumbs-up{color:navy; font-size:16px; }
 	.eq-desc td{width:90px;}
-	#sep{margin:5px 15px 10px 15px;}
+	#sep{margin:5px 15px 4px 15px;}
 	.like{border:1px solid rgba(0,0,0,0.1);padding:2px;}
+	#head{margin-bottom:30px;}
+	.hr{margin:0;margin-top:5px;}
+
+#add{ margin-left:30px }
+
+/*Hover card*/
+.eq-card{margin-right:28px;margin-bottom:30px;height:28em; background:#fff;padding:0; }
+.eq-image{max-height:400px;text-align:center;}
+.eq-desc{padding:5px;}
+
+.category{display:inline-block; margin:3px 5px 1px 2px;color:navy;width:auto;font-size:12px;}
+
 </style>

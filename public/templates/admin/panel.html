@@ -1,0 +1,73 @@
+<div class="container">
+	<div>
+		<h3>Pending Dealers</h3>
+		<table id='tb1' class="table table-striped">
+			<thead>
+				<th> id</th>
+				<th> Name </th>
+				<th> City </th>
+				<th> State </th>
+				<th> Mobile </th>
+				<th> eMail </th>
+				<th></th>
+			</thead>
+			<tr ng-repeat="d in dealers">
+				<td ng-repeat="(key, value) in d">
+					{{value}}
+				</td>
+				<td>
+					<div class="dropdown">
+						<button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Approve
+					  	<span class="caret"></span></button>
+						<ul class="dropdown-menu approval">
+						    <li><button class="bt btn-sm btn-success" ng-click="approve(d.id)">Confirm</button></li>
+						    <li><button class="bt btn-sm btn-danger">Reject</button></li>
+						</ul>
+					</div> 
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="dropdown">
+						<button class="btn btn-sm btn-danger dropdown-toggle" type="button" data-toggle="dropdown"><b>X</b>
+					  	<span class="caret"></span></button>
+						<ul class="dropdown-menu approval">
+						    <li><button class="btn btn-sm btn-danger">Reject</button></li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<!--xxxxxxxxxxxxx-->
+		<br>
+		<h3>All Dealers</h3>
+		<table id='tb1' class="table table-striped">
+			<thead>
+				<th> id </th>
+				<th> Name </th>
+				<th> City </th>
+				<th> State </th>
+				<th> Mobile </th>
+				<th> eMail </th>
+			</thead>
+			<tr ng-repeat="d in dealers">
+				<td ng-repeat="(key, value) in d">
+					{{value}}
+				</td>
+			</tr>
+		</table>		
+	</div>
+</div>
+
+<style type="text/css">
+	body{overflow:scroll;}
+	table{border:1px solid #999;}
+	#tb1{width:95%}
+	th{border:1px solid navy;text-align:center; background-color:#fff;}
+	#tb1 tr td{border:1px dashed #999;}
+	#tb1 tr td:nth-child(1){width:30px;}
+	#tb1 tr td:nth-child(2){width:200px;}
+	#tb1 tr td:nth-child(4){width:80px;}
+	#tb1 tr td:nth-child(5){width:140px}
+	.dropdown{display:inline-block;}
+	.btn-sm{padding-top:3px;padding-bottom:3px;margin:0;height:auto;font-size:0.9em  }
+	.approval{padding:16px;width:200px;}
+	.approval li{display:inline-block;}
+</style>

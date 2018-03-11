@@ -50,12 +50,35 @@
 					<label><i class="fa fa-caret-right"></i> Expectations : </label><span><i class="fa fa-inr"></i>  {{car.expectations}} </span>
 				</div>
 			</div>
+
+			<div class="col-md-9">
+					<br>
+				<div class="label2">
+					<label><i class="fa fa-caret-right"></i> Available in &nbsp;&nbsp;&nbsp;</label>
+					<span ng-repeat="(key, value) in car.category" ng-if="value==true" style="display:inline-block;width:70px">&bull; {{key}} 
+					</span>
+					<div ng-if="edit==true" style="display: inline-block;">
+						<div class="dropdown">
+							<button class='btn btn-sm btn-warning dropdown-toggle' type="button" data-toggle="dropdown">Edit <span class="caret"></span> </button>
+							<ul class="dropdown-menu">
+							    <li><input type="checkbox" ng-model='car.category.offline'><span>Offline</span></li>
+							    <li><input type="checkbox" ng-model='car.category.buynow'> <span>Buy it now</span></li>
+							    <li><input type="checkbox" ng-model='car.category.D2D'><span>Dealer to Dealer</span></li>
+							    <li><input type="checkbox" ng-model='car.category.Auction'><span>Auction</span></li>
+							<button class="btn btn-info btn-sm" ng-click="editCat()">Save</button>
+							</ul>
+						</div>
+					</div>	
+				</div>
+			</div>
+
 			<div class="col-md-5" id="like">
 				<button ng-click="like()">
 					<i class="fa fa-thumbs-up"></i>
 				</button>
 				<span>{{car.likes}} likes</span>
 			</div>
+			
 
 			<div class="col-md-12" style="margin-top: 30px">
 				<div>
@@ -111,7 +134,7 @@ body{background: #eef1f6;}
 	#car-container{border:2px dotted grey;margin:10px;padding-bottom:30px;width:96% }
 	#car-container h3{padding-left:30px;}
 	#details{padding-top:50px;}
-	.label-container,.small-label{background:#f7faff; display:inline-block; border-bottom:1px solid #e2e2e2;border-left:1px solid #e2e2e2;}
+	.label-container,.small-label,.label2{background:#f7faff; display:inline-block; border-bottom:1px solid #e2e2e2;border-left:1px solid #e2e2e2;}
 	.label-container label,.small-label label{padding-right:10px;padding-left:5px; }
 	.label-container{width:31%;}
 	.small-label{width:22%;}
@@ -131,15 +154,17 @@ body{background: #eef1f6;}
 		50%{ transform:scale(1.5); }
 		100%{ transform:scale(0); }
 	}
+	.dropdown-menu{padding:10px;}
+	.dropdown-menu input{margin-right:10px;}
 	.main-img{background:transparent;border:none;border-radius:0;outline:none;}
 	.modal-body img{width:auto;}
 	.modal-dialog{
-    position: relative;
-    display: table; /* This is important */ 
-    overflow-y: auto;    
-    overflow-x: auto;
-    width: auto;
-    min-width: 300px;   
+	    position: relative;
+	    display: table; /* This is important */ 
+	    overflow-y: auto;    
+	    overflow-x: auto;
+	    width: auto;
+	    min-width: 300px;   
 	}
 	.close{ border:2px solid red;color:red; }
 	.modal-header button{background:transparent;border:1px solid red; float:right;color:red;font-weight:bolder;}

@@ -1,0 +1,166 @@
+<div ng-controller="schAuctionCtrl">
+	<div class="card" style="width:100%">
+		<!--nav-->
+		<nav class="navbar navbar-inverse navbar-custom1">
+		  <div class="container-fluid">
+		    <ul class="nav navbar-nav">
+		      <li><button class="btn-link" ng-click="showPending()">PENDING</button></li>
+		      <li><button class="btn-link" ng-click="showApproved()">APPROVED AUCTIONS</button></li>
+		      <li><button class="btn-link" ng-click="schDate()">Schedule Date</button></li>
+		      <li><button class="btn-link" ng-click="scheduledAuc()">Scheduled Auction</button></li>
+		      <li><button class="btn-link" ng-click="showBids()">Bids</button></li>
+		    </ul>
+		  </div>
+		</nav>
+		<!--nav-->
+
+	<div id="1" class="common">
+		<h3 ng-show="appr==false" style="color:navy">Pending Equipments for Auction</h3>
+		<h3 ng-show="appr==true">Approved Equipments for Auction &nbsp;&nbsp;&nbsp;
+			<button class="btn btn-success" data-toggle="modal" data-target="#auctionmodal" ng-click="assignSlot()">Schedule Auction</button>
+		</h3>
+		<!--for approval -->
+		<div class="alert alert-success" ng-if="success1==true">
+			{{s.brand}} {{s.model}} approved for auction !
+		</div>
+		<!--end-->
+
+		<div class="row" id="auction">
+			<div class="col-md-3 card" ng-repeat='eq in auctionseq'>
+
+				<a ui-sref="carprofile({id:1})" target="blank">
+					<img src="build/sample/Ford-mustang.jpg" class="img-thumbnail">
+				</a><hr>
+
+				<div class="a-body">
+					<label class='lb'>Equipment:</label><label>{{eq.brand}} </label>
+					&nbsp;&nbsp;&nbsp; id: {{eq.id}} 
+					<!--checkbox-->
+					<span class="cbox" ng-show="appr==true">
+						<input type="checkbox" ng-model="cb[eq.id+eq.brand]" ng-change="addtoList(eq.id,cb[eq.id+eq.brand])">
+					</span> <br>
+					<!--checkbox-->
+
+					<label class='lb'>Model:</label> <label>{{eq.model}} </label>
+					<span class="pull-right">{{eq.likes}}<i class="fa fa-thumbs-up"></i></span> <br>
+					<label class='lb'>Year:</label> <label>{{eq.year}} </label><br>
+					<label class='lb'>Bought:</label> <label>{{eq.bought_price}} </label><br>
+					<label class='lb'>Expects:</label> <label>{{eq.expectations}} </label>
+
+					<!--for approval -->
+					<div ng-show="appr==false" style="display:inline-block;float:right;">
+						<button class="btn btn-sm btn-primary" ng-click="accept(eq.id)"><i class="fa fa-check"></i> </button>
+						<button class="btn btn-sm btn-danger" ng-click="reject(eq.id)"><strong>x</strong> </button>
+					</div>
+					<!--end-->
+				</div>
+				<!--body end-->
+			</div>
+		</div>
+	</div>
+
+	<!--3 to assign slot-->
+	<div id="3" class="common">
+		<h4>Schedule</h4>
+	    <div>
+	    	Date: <select ng-model="selected.date" >
+	    			<option value="24/2/2108">24/2/2108</option>
+	    		  </select>
+	    	Time Slot: <select><option></option> </select>
+	    	<br><br><br>
+	    	<button class="btn btn-success" ng-click="checkoutAuction()">Schedule </button>
+	    </div>
+	</div>
+
+	<!--2 to schedule date-->
+	<div id="2" class="container common">
+		<label>Select Date :&nbsp;&nbsp; </label>
+		<input type="date" ng-model="sch.setDate" class="form-control" style="width:270px">
+		<label>Start Time :&nbsp;&nbsp; </label>
+		<input type="time" ng-model="sch.start" class="form-control" style="width:270px">
+		<label>End Time :&nbsp;&nbsp; </label>
+		<input type="time" ng-model="sch.end" class="form-control" style="width:270px">
+		<br>
+		<button class="btn btn-primary">Schedule Date</button>
+		<br><br><br><hr>
+		You have auctions scheduled on :
+	</div>
+
+		<!--4 Scheduled-->
+	<div id="4" class="common">
+		<h3>Scheduled Auctions</h3>
+
+		<div ng-repeat="obj in schauc" style="border:1px dashed grey;padding:3px 20px 20px 30px">
+
+			<div class="row" id="auction">
+				<div class="col-md-10" ng-show="scheduled==true">
+					<h4 class="date"><i class="fa fa-calendar-check-o"></i> {{ obj.date }}    From :   To :  </h4>
+				</div>
+
+				<div class="col-md-3 card" ng-repeat='eq in obj.equipments'>
+					<a ui-sref="carprofile({id:1})" target="blank">
+						<img src="build/sample/Ford-mustang.jpg" class="img-thumbnail">
+					</a><hr>
+
+					<div class="a-body">
+						<label class='lb'>Equipment:</label><label>{{eq.brand}} </label>
+						&nbsp;&nbsp;&nbsp; id: {{eq.id}} <br>
+						<label class='lb'>Model:</label> <label>{{eq.model}} </label>
+						<span class="pull-right">{{eq.likes}}<i class="fa fa-thumbs-up"></i></span> <br>
+						<label class='lb'>Year:</label> <label>{{eq.year}} </label><br>
+						<label class='lb'>Bought:</label> <label>{{eq.bought_price}} </label><br>
+						<label class='lb'>Expects:</label> <label>{{eq.expectations}} </label>
+					</div>
+					<!--body end-->
+				</div>
+				<!-- to show bids-->
+				<div class="col-md-6" ng-show="showbid==true">
+					<table class="table table-striped table-condensed table-bordered">
+						<th>Dealer</th>
+						<th>Bid</th>
+						<tr ng-repeat="bid in obj.bids">
+							<td> {{bid.dealer_name}} &nbsp;&nbsp;<input type="radio" name="ALLOT"> </td>
+							<td><i class="fa fa-inr"></i> {{bid.bid }} </td>
+						</tr>
+						<tr><td colspan="2"><button class="btn btn-sm btn-warning">ALLOT</button></td></tr>
+					</table>
+				</div>
+				<!--//-->
+
+			</div>
+
+		</div>
+	</div>
+	<!--4ends-->
+
+	</div>
+</div>
+
+<style type="text/css">
+	body{background-color:#f4f6f9;}
+	.card{padding:20px 30px 30px 40px;width:80%;margin-top:30px}
+	.col-md-4{ margin-right:20px;margin-bottom:15px;  }
+	.col-md-4 input{width:100%}
+	.btn-success{width:200px;}
+	.modal-dialog{text-align:center;}
+	#auction .col-md-3{margin:auto; width:16em;padding:0;margin:13px;}
+	#auction img {cursor:pointer;}
+	.a-body{padding-left:3px;padding-bottom:10px; }
+	.a-head{ text-align:center;font-size:16px;background:#0057a3;color:#fff; }
+	.a-body label{font-size:0.9em;padding-left:10px;}
+	.a-body img{width:100%; }
+	.lb{font-weight:normal;width:67px}
+	.fa-check {color:#fff;}
+	.fa-thumbs-up{margin-right:15px}
+	hr{margin:4px;}
+	.cbox{float:right;padding:0;height:23px;margin-right:10px;background-color:#ccc;}
+	.cbox input{}
+	.navbar{margin-left:-40px;margin-top:-20px;width:105%;}
+	.navbar-custom1 .nav > li >button{color:#fff;border-right:1px outset #fff;padding:15px;}
+	.navbar-custom1 .nav > li >button:hover{background-color:#000}
+
+	 /*4*/
+	 .date{color:red;margin:20px;font-weight:bold; }
+	 th{background-color:#ccc;}
+	 .table,th{text-align:center;margin-top:30px;}
+</style>

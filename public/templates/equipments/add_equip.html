@@ -1,6 +1,6 @@
 <div ng-controller="add_equipCtrl">
 <center>
-	<form class="card" style="padding-bottom: 40px;margin-bottom:40px;" ng-submit='add_equipment()'>
+	<form class="card" id="basic-form" style="padding-bottom: 40px;margin-bottom:40px;" ng-submit='add_equipment()'>
 		<center>
 		<h4 class="label-info" id='basic-label'>Basic Details</h4> 	
 			<table class='add-form'>
@@ -80,7 +80,7 @@
 			<tr>
 				<td style="padding-top:0;">
 					<label>Equipment :</label><br>
-					<input type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-height="1000" ngf-max-size="2MB" required>
+					<input type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-height="1000" ngf-max-size="2MB">
 					<input type="file" ng-model='basic.equip.b'>	
 					<input type="file" ng-model='basic.equip.c'>
 				</td>
@@ -100,14 +100,14 @@
 				<td></td>
 			</tr>
 			<tr>
-				<td colspan="2"><button class="btn btn-primary pull-right">ADD Equipment!</button></td>
+				<td colspan="2" id="addbtn">
+					<button class="btn btn-primary pull-right" href="#next"> ADD Equipment!</button>
+				</td>
 			</tr>
 		</table>
 		</center>
 	</form>
-	<div>
-
-	</div>
+<ng-include src="next" onload="false"></ng-include>
 </center>
 </div>
 
