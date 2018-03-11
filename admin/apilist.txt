@@ -1,0 +1,22 @@
+app.get('/new_location', functions.isLoggedInfunc, functions.new_location);
+app.post('/new_location', functions.isLoggedInfunc, functions.add_new_location);
+app.get('/existing_location', functions.isLoggedInfunc, functions.existing_location);
+app.get('/existing_user', functions.isLoggedInfunc, functions.existing_user);
+app.get('/add_new_admin', functions.isLoggedInfunc, functions.add_new_admin);
+app.post('/add_new_admin', functions.isLoggedInfunc, functions.add_new_admin_post_form);
+app.get('/admin/new_location', functions.isLoggedInfunc, admin_access, functions_admin.new_location);
+app.post('/admin/new_location', functions.isLoggedInfunc, admin_access, functions_admin.add_new_location);
+app.get('/admin/existing_location', functions.isLoggedInfunc, admin_access, functions_admin.existing_location);
+app.get('/admin/existing_user', functions.isLoggedInfunc, admin_access, functions_admin.existing_user);
+app.get('/admin/add_new_admin', functions.isLoggedInfunc, admin_access, functions_admin.add_new_admin);
+app.post('/admin/add_new_admin', functions.isLoggedInfunc, admin_access, functions_admin.add_new_admin_post_form);
+
+app.get('/admin/add_new_equipment', functions.isLoggedInfunc, admin_access, functions_admin.add_new_equipment);
+app.post('/admin/add_new_equipment', functions.isLoggedInfunc, admin_access, functions_admin.add_new_equipment_post_form);
+app.get('/admin/add_new_auction', functions.isLoggedInfunc, admin_access, functions_admin.add_new_auction);
+app.post('/admin/add_new_auction', functions.isLoggedInfunc, admin_access, functions_admin.add_new_auction_post_form);
+
+app.get('/existing_dealers', functions.isLoggedInfunc, functions.existing_dealers);    //common for admin and dealer
+
+app.get('/admin/enquiry_form', functions.isLoggedInfunc, admin_access, functions_admin.enquiry_form);
+app.post('/admin/enquiry_form', functions.isLoggedInfunc, admin_access, functions_admin.enquiry_form_post_form);
