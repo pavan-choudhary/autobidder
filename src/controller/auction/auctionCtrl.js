@@ -9,7 +9,7 @@ angular.module('angularApp')
 	];
 	$scope.confirm=false;
 	$scope.carprofile=function(id){
-		$location.path('/carprofile/other/'+id);
+		$location.path('/carprofile/'+id);
 	};
 	$scope.bidnow=function(id){
  		$scope.bid=$scope.auctionseq[id];

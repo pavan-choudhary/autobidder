@@ -1,11 +1,11 @@
 angular.module('angularApp', ['ui.router','oc.lazyLoad','chart.js'])
 .constant('config', {
-    apibase:'http://auctioning-192405.appspot.com'
+    apibase:'http://35.200.128.175:3000'
 })
 .run(['$rootScope','$location', 'Auth',
 	 function ($rootScope, $location, Auth) {
     	$rootScope.$on('$locationChangeStart', function (event) {
-        if (!Auth.isLoggedIn()) {
+          if (!Auth.isLoggedIn()) {
             console.log('DENY');
             //event.preventDefault();
             $("#essential").hide();
@@ -21,7 +21,6 @@ angular.module('angularApp', ['ui.router','oc.lazyLoad','chart.js'])
             $location.path('/Dashboard');
             }
         }
-
         $rootScope.$on('$locationChangeSuccess', function (event) {
             var path=$location.path();
             $rootScope.path=path.slice(1,$location.path().length);

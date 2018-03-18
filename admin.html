@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="adminApp">
+<head>
+    <meta charset="utf-8">
+    <title>ADMIN |AUTOBIDDER</title>
+    <base href="admin.html ">
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" type="image/png" href="public/ico/favicon.ico"/>
+    <link href="build/styles/style.css" rel="stylesheet"  media="none" media="none" onload="if(media!='all') media='all'">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="admin/adminstyle.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Coda' rel='stylesheet'>
+</head>
+<body ng-controller="panelCtrl">
+<div class="sidenav col-md-2">
+    <div style="background-color:#fff;"><img src="public/images/autobidder-logo.png" style="width:100%;"></div>
+    <br><br><br>
+  <a ui-sref='Panel'><i class="fa fa-angle-double-right"></i> Dealers</a>
+  <a ui-sref="equipments({type : 'my'})"><i class="fa fa-angle-double-right"></i> Equipments</a>
+    <a ui-sref="add"><i class="fa fa-angle-double-right"></i> ADD</a>
+  <a ui-sref="schAuction"><i class="fa fa-angle-double-right"></i> Auctions</a>
+  <a ui-sref="logout"><i class="fa fa-angle-double-right"></i> Logout</a>
+</div>
+<button class="col-md-offset-2 btn btn-default" ng-click="back()" id="backbtn">
+    <i class="fa fa-arrow-circle-left" style="font-size:20px"></i> Back
+</button>
+<ui-view class="col-md-10 col-md-offset-2" style="margin-top:10px;"> </ui-view>    
+
+<script src="build/scripts/script.min.js"></script>
+<script src="build/admin/adminapp.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>

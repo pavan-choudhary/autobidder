@@ -6,11 +6,12 @@ $light:#eef1f6;
 $white:#fff;
 $label:navy;
 $right-mar:40px;
+$back:#fcffed;
 
 @import url('https://fonts.googleapis.com/css?family=Abel');
 html{}
 body{
-  background-color:#f4f6f9;overflow-x:hidden;font-family:'Coda';
+  background-color:$back;overflow-x:hidden;font-family:'Coda';
 	}
 .navbar a{
   padding: 5px;
@@ -26,7 +27,7 @@ label{font-family:Abel;font-size:16px;  }
 	background-color:#fff; 
 	font-size:18px;
   border-bottom:1px solid grey;}
-#view{font-family:'Coda';margin-top:5em;padding-left:30px;background:#f4f6f9;}
+#view{font-family:'Coda';margin-top:5em;padding-left:30px;background:$back;}
 ui-view{ }
 .line{
     display: table;
@@ -44,3 +45,13 @@ ui-view{ }
 }
 .mainlabel{padding:5px;color:#fff;width:200px;padding-left:40px;box-shadow:4px 4px 4px grey; }
 .form-control:focus {border-color:grey;box-shadow:1px 1px 3px grey }
+
+.btn1{
+    border:2px outset #2193ff;
+    background:#0081d8; 
+    border-radius:4px;
+    padding:4px 16px 4px 16px;
+    color:#fff;
+    box-shadow:2px 2px 1px grey;
+
+    }

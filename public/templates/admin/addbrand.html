@@ -1,7 +1,7 @@
 <div ng-controller="addbrandCtrl">
 	<div class="container">
 		<br><br>
-		<form>
+		<form name="addForm" ng-submit="addetail()">
 		<div class="row">
 			<div class="col-md-4">
 				<label>Brand:</label>
@@ -9,12 +9,16 @@
 			</div>
 			<div class="col-md-4">
 				<label>Model:</label>
-				<input type="text" class="in form-control change" placeholder="Enter Model" ng-model="eq.model">
+				<input type="text" name="model1" class="in form-control change" placeholder="Enter Model">
+				<br>
+				<input type="text" name="model2" class="in form-control change" placeholder="Enter Model">
+				<br>
+				<input type="text" name="model3" class="in form-control change" placeholder="Enter Model">
 			</div>
 			<div class="col-md-6">
 				<br>
 				<div class="alert alert-success" ng-if="success==true">Brand- {{brand}} , Model- {{model}} added Successfully! </div>
-				<input type="submit" value="ADD" class="btn btn-primary" ng-click="addetail()">
+				<input type="submit" value="ADD" class="btn btn-primary">
 			</div>
 		</div>
 		</form>

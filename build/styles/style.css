@@ -1,5 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+body {
+  background-color: #fcffed;
+  overflow-x: hidden;
+  font-family: 'Coda'; }
+
 .navbar a {
   padding: 5px; }
 
-.font1 {
-  font-family: 'Coda'; }
+label {
+  font-family: Abel;
+  font-size: 16px; }
+
+.card {
+  box-shadow: 2px 2px 4px grey;
+  border-radius: 5px;
+  padding: 0;
+  background-color: #fff; }
+
+#path {
+  padding: 5px;
+  width: 370px;
+  margin-bottom: 6px;
+  background-color: #fff;
+  font-size: 18px;
+  border-bottom: 1px solid grey; }
+
+#view {
+  font-family: 'Coda';
+  margin-top: 5em;
+  padding-left: 30px;
+  background: #fcffed; }
+
+.line {
+  display: table;
+  white-space: nowrap; }
+  .line:before, .line:after {
+    border-top: 1px solid navy;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.5em;
+    width: 400px; }
+  .line:before {
+    right: 1.5%; }
+  .line:after {
+    left: 1.5%; }
+
+.mainlabel {
+  padding: 5px;
+  color: #fff;
+  width: 200px;
+  padding-left: 40px;
+  box-shadow: 4px 4px 4px grey; }
+
+.form-control:focus {
+  border-color: grey;
+  box-shadow: 1px 1px 3px grey; }
+
+.btn1 {
+  border: 2px outset #2193ff;
+  background: #0081d8;
+  border-radius: 4px;
+  padding: 4px 16px 4px 16px;
+  color: #fff;
+  box-shadow: 2px 2px 1px grey; }

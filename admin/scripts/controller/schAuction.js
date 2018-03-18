@@ -74,9 +74,10 @@ angular.module('adminApp')
 	   		}
 	   		else
 		   		{
-		   			$(".hide").hide();
+		   			$(".common").hide();
 			    	$("#3").fadeIn();
 			    	$scope.selected.ids=eqid;
+			    	console.log('in');
 			    }
 	    };
 
